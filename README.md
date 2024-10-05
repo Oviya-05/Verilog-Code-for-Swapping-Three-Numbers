@@ -29,69 +29,32 @@ Save and Document Results:
 Capture the waveform output and include the results in your report for verification.
 
 Verilog Code:
-
+~~~
 // swap_three_numbers.v
-module swap_three_numbers (
-    input wire [7:0] a_in,
-    input wire [7:0] b_in,
-    input wire [7:0] c_in,
-    output reg [7:0] a_out,
-    output reg [7:0] b_out,
-    output reg [7:0] c_out
-);
-    always @(*) begin
-        a_out = b_in; // Swap: a = b
-        b_out = c_in; // Swap: b = c
-        c_out = a_in; // Swap: c = a
-    end
+module swap_three_numbers( 
+input wire [7:0] a_in, 
+input wire [7:0] b_in, 
+input wire [7:0] c_in, 
+output reg [7:0] a_out, 
+output reg [7:0] b_out, 
+output reg [7:0] c_out ); 
+always @(*) 
+    begin 
+        a_out = b_in; // Swap: a = b 
+        b_out = c_in; // Swap: b = c 
+        c_out = a_in; // Swap: c = a 
+    end 
 endmodule
+~~~
+![image](https://github.com/user-attachments/assets/68669cfe-47ee-4af8-ad4c-3b20ba37f711)
+![image](https://github.com/user-attachments/assets/f5653fd8-24c1-43c2-a300-4d63d86bc4ba)
 
 
 Testbench for Swapping Three Numbers:
+Testbench for Swapping Three Numbers: `timescale 1ns / 1ps module swapping_tb; // Inputs reg [7:0] a; reg [7:0] b; reg [7:0] c; // Outputs wire [7:0] a_out; wire [7:0] b_out; wire [7:0] c_out; // Instantiate the Unit Under Test (UUT) swapping uut ( .a_in(a), .b_in(b), .c_in(c), .a_out(a_out), .b_out(b_out), .c_out(c_out) ); // Test procedure initial begin // Initialize inputs a = 8'd10; // Assign 10 to a b = 8'd20; // Assign 20 to b c = 8'd30; // Assign 30 to c #10; $display("Before Swap: a = %d, b = %d, c = %d", a, b, c); #10; $display("After Swap: a_out = %d, b_out = %d, c_out = %d", a_out, b_out, c_out); #10 $stop; end endmodule
+![image](https://github.com/user-attachments/assets/7e94a7b0-ac7a-47c5-8efd-d1190edc4958)
 
-// swap_three_numbers_tb.v
-`timescale 1ns / 1ps
 
-module swap_three_numbers_tb;
-
-    // Inputs
-    reg [7:0] a;
-    reg [7:0] b;
-    reg [7:0] c;
-
-    // Outputs
-    wire [7:0] a_out;
-    wire [7:0] b_out;
-    wire [7:0] c_out;
-
-    // Instantiate the Unit Under Test (UUT)
-    swap_three_numbers uut (
-        .a_in(a),
-        .b_in(b),
-        .c_in(c),
-        .a_out(a_out),
-        .b_out(b_out),
-        .c_out(c_out)
-    );
-
-    // Test procedure
-    initial begin
-        // Initialize inputs
-        a = 8'd10; // Assign 10 to a
-        b = 8'd20; // Assign 20 to b
-        c = 8'd30; // Assign 30 to c
-
-        // Wait for 10 ns to observe swap
-        #10;
-
-        // Display results
-        $display("Before Swap: a = %d, b = %d, c = %d", a, b, c);
-        #10;
-        $display("After Swap: a = %d, b = %d, c = %d", a_out, b_out, c_out);
-        
-        // Stop the simulation
-        #10 $stop;
-    end
 endmodule
 
 Conclusion
