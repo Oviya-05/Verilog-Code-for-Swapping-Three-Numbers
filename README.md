@@ -32,6 +32,7 @@ Save and Document Results:
 
 Capture the waveform output and include the results in your report for verification.
 
+
 **Verilog Code:**
 ~~~
 // swap_three_numbers.v
