@@ -83,6 +83,7 @@ initialize inputs
     end 
     endmodule
 ~~~
+
 **Output:**
 
 ![image](https://github.com/user-attachments/assets/7e94a7b0-ac7a-47c5-8efd-d1190edc4958)
