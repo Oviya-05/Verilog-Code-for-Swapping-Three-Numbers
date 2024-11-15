@@ -1,5 +1,5 @@
 # Verilog-Code-for-Swapping-Three-Numbers
-Aim
+# Aim:
 To design and simulate a Verilog HDL code for swapping the values of three numbers without using any temporary variables, and verify the correctness of the swapping operation through a testbench using the Vivado 2023.1 simulation environment.
 
 Apparatus Required
