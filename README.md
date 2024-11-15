@@ -46,12 +46,16 @@ always @(*)
     end 
 endmodule
 ~~~
+
 **Output:**
+
 ![image](https://github.com/user-attachments/assets/68669cfe-47ee-4af8-ad4c-3b20ba37f711)
 ![image](https://github.com/user-attachments/assets/f5653fd8-24c1-43c2-a300-4d63d86bc4ba)
 
 
 # Testbench for Swapping Three Numbers: 
+
+~~~
 `timescale 1ns / 
 1ps module swapping_tb;
     reg [7:0] a; 
@@ -78,10 +82,13 @@ initialize inputs
     #10 $stop; 
     end 
     endmodule
+~~~
+**Output:**
+
 ![image](https://github.com/user-attachments/assets/7e94a7b0-ac7a-47c5-8efd-d1190edc4958)
 
 
-endmodule
+
 
 # Conclusion:
 
